@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { Country } from 'src/app/interfaces/app.country';
+
 @Component({
   selector: 'app-card-country',
   templateUrl: './card-country.component.html',
@@ -13,6 +15,6 @@ export class CardCountryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() country!: any;
+  @Input() country!: Country;
 
 }

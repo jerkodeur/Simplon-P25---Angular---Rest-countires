@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import axios from 'axios';
 
+import { Country } from 'src/app/interfaces/app.country';
 
 @Component({
   selector: 'app-page-geoloc',
@@ -9,7 +10,7 @@ import axios from 'axios';
   styleUrls: ['./page-geoloc.component.scss']
 })
 export class PageGeolocComponent implements OnInit {
-  countries !: any[];
+  countries !: Country[];
   cca2 !: string;
   zoom = 10;
   center !: google.maps.LatLngLiteral;

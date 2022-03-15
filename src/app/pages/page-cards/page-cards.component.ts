@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Country } from 'src/app/interfaces/app.country';
+
 @Component({
   selector: 'app-page-cards',
   templateUrl: './page-cards.component.html',
   styleUrls: ['./page-cards.component.scss']
 })
 export class PageCardsComponent implements OnInit {
-  countries !: any[];
+  countries !: Country[];
 
   constructor() { }
 

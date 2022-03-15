@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios'
+
+import { Country } from 'src/app/interfaces/app.country';
 
 @Component({
   selector: 'app-page-table',
@@ -7,7 +8,7 @@ import axios from 'axios'
   styleUrls: ['./page-table.component.scss']
 })
 export class PageTableComponent implements OnInit {
-  countries!: any[];
+  countries!: Country[];
 
   constructor() { }
 
