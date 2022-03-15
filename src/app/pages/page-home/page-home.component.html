@@ -1,0 +1,18 @@
+<main class="container-xl">
+  <h1>European region countries</h1>
+  <p>
+    Made with HTML 5 and vanilla JavaScript, with the help of
+    <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" title="Get started with bootstrap 5"
+       target="_blank">Bootstrap 5.</a>
+  </p>
+  <article>
+    <h2>List of countries</h2>
+    <ul id="countries">
+      <li *ngFor="let country of countries">{{country.name.official}}</li>
+    </ul>
+  </article>
+  <p>
+    Source:
+    <a href="https://restcountries.com/" title="Go to the rest countries API" target="_blank">REST Countries.</a>
+  </p>
+</main>

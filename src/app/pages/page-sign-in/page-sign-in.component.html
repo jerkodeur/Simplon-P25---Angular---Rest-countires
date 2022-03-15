@@ -1,0 +1,19 @@
+<main class="container-xl justify-content-center">
+  <h1>Sign in</h1>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="mt-5 col-md-6 m-auto">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username (email address)</label>
+      <div class="input-group">
+        <span class="input-group-text" id="userHelp">@</span>
+        <input type="text" class="form-control" id="username" formControlName="username">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+    <div class="d-grid col-12 col-md-2 ms-auto">
+      <button type="submit" class="btn btn-primary text-nowrap">Sign in</button>
+    </div>
+  </form>
+</main>

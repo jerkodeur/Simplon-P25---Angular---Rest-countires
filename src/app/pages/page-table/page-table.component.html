@@ -1,0 +1,27 @@
+<main class="container-xl">
+  <h1>HTML table presentation</h1>
+  <article class="pt-2 table-responsive-sm">
+    <table class="table table-bordered table-hover">
+      <caption>List of european region countries</caption>
+      <thead class="table-light border">
+        <tr class="text-center">
+          <th class="col-6">Country</th>
+          <th class="col-1">Area</th>
+          <th class="col-2">Population</th>
+          <th class="col-3">Capital</th>
+        </tr>
+
+      </thead>
+      <tbody class="border">
+        <tr *ngFor="let country of countries">
+          <td class="text-nowrap fw-bold">{{country.name.official}}</td>
+          <td class="text-end">{{country.area | number}}</td>
+          <td class="text-end">{{country.population | number}}</td>
+          <td class="text-nowrap">
+            <a [routerLink]="['/geoloc', { cca2: country.cca2 }]">{{country.capital[0]}}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>''
+  </article>
+</main>

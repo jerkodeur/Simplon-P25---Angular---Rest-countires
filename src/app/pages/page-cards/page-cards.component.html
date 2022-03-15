@@ -1,0 +1,8 @@
+<main class="container-xl">
+  <h1>Cards presentation</h1>
+  <div class="pt-2 row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4">
+    <div class="col" *ngFor="let country of countries">
+      <app-card-country [country]="country"></app-card-country>
+    </div>
+  </div>
+</main>
