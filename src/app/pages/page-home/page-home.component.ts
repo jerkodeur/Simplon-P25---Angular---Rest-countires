@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Country } from 'src/app/interfaces/app.country';
+import { CountryName } from 'src/app/interfaces/Country-name.interface';
+import { CountryService } from 'src/app/services/config/country.service';
 
 @Component({
   selector: 'app-page-home',
   templateUrl: './page-home.component.html',
-  styleUrls: ['./page-home.component.scss']
+  styleUrls: ['./page-home.component.scss'],
 })
 export class PageHomeComponent implements OnInit {
-  public countries!: Country[];
+  public countries!: CountryName[];
 
-  constructor() { }
+  constructor(private countryService: CountryService) {}
 
   ngOnInit(): void {
-    fetch("https://restcountries.com/v3.1/region/europe?fields=name")
-    .then((datas) => datas.json())
-      .then((response) => {
-        this.countries = response
-      });
+    this.countryService
+      .getNames()
+      .subscribe((items: CountryName[]) => (this.countries = items));
   }
-
-
 }

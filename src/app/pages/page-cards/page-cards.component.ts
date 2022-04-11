@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Country } from 'src/app/interfaces/app.country';
+import { CountryCard } from 'src/app/interfaces/Country-card.interface';
+import { CountryService } from 'src/app/services/config/country.service';
 
 @Component({
   selector: 'app-page-cards',
   templateUrl: './page-cards.component.html',
-  styleUrls: ['./page-cards.component.scss']
+  styleUrls: ['./page-cards.component.scss'],
 })
 export class PageCardsComponent implements OnInit {
-  countries !: Country[];
+  countries!: CountryCard[];
 
-  constructor() { }
+  constructor(private countryService: CountryService) {}
 
   ngOnInit(): void {
-    fetch("https://restcountries.com/v3.1/region/europe?fields=name,capital,maps,flags,cca2")
-    .then((datas) => datas.json())
-      .then((response) => {
-        this.countries = response
-      });
+    this.countryService
+      .getCards()
+      .subscribe((cards: CountryCard[]) => (this.countries = cards));
   }
-
 }

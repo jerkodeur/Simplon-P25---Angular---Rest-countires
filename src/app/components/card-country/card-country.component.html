@@ -1,11 +1,11 @@
 <article class="card h-100">
-  <a href="{{country.maps.googleMaps}}" target="_blank" rel="noopener">
-    <img src="{{country.flags.png}}" class="card-img-top" alt="{{country.name.official}} flag">
+  <a href="{{country.map}}" target="_blank" rel="noopener">
+    <img src="{{country.flag}}" class="card-img-top" alt="{{country.name}} flag">
   </a>
   <div class="card-body">
-    <h5 class="card-title">{{country.name.official}}</h5>
+    <h5 class="card-title">{{country.name}}</h5>
     <h6 class="card-text">
-      <a [routerLink]="['/geoloc', {cca2: country.cca2}]">{{country.capital[0]}}</a>
+      <a [routerLink]="['/geoloc', {cca2: country.isoCode}]">{{country.capital}}</a>
     </h6>
   </div>
 </article>

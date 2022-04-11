@@ -3,9 +3,9 @@
   <article>
     <label for="countryList" class="form-label">Select a country:</label>
     <select class="form-select" aria-label="Europe official countries" id="countryList" (change)="onChange($event)">
-      <option *ngFor="let country of countries" [value]="country.cca2"
-              [selected]="country.cca2 == cca2">
-        {{country.name.official}}</option>
+      <option *ngFor="let country of countries" [value]="country.isoCode"
+              [selected]="country.isoCode == cca2">
+        {{country.name}}</option>
     </select>
     <p class="text-muted">
       Once selected, map will be refreshed and centered on the capital.

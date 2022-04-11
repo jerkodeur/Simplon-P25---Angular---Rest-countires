@@ -14,14 +14,14 @@
       </thead>
       <tbody class="border">
         <tr *ngFor="let country of countries">
-          <td class="text-nowrap fw-bold">{{country.name.official}}</td>
+          <td class="text-nowrap fw-bold">{{country.name}}</td>
           <td class="text-end">{{country.area | number}}</td>
           <td class="text-end">{{country.population | number}}</td>
           <td class="text-nowrap">
-            <a [routerLink]="['/geoloc', { cca2: country.cca2 }]">{{country.capital[0]}}</a>
+            <a [routerLink]="['/geoloc', { cca2: country.isoCode }]">{{country.capital}}</a>
           </td>
         </tr>
       </tbody>
-    </table>''
+    </table>
   </article>
 </main>

@@ -1,20 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-import { Country } from 'src/app/interfaces/app.country';
-
+import { CountryCard } from 'src/app/interfaces/Country-card.interface';
 @Component({
   selector: 'app-card-country',
   templateUrl: './card-country.component.html',
-  styleUrls: ['./card-country.component.scss']
+  styleUrls: ['./card-country.component.scss'],
 })
-export class CardCountryComponent implements OnInit {
+export class CardCountryComponent {
+  constructor() {}
 
-  constructor() {
-   }
-
-  ngOnInit(): void {
-  }
-
-  @Input() country!: Country;
-
+  @Input() country!: CountryCard;
 }
